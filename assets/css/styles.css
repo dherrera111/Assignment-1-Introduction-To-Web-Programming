@@ -1,0 +1,355 @@
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #27445D;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+
+nav {
+  background-color: #497D74;
+  padding: 15px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  /*  to make sure it stays on top of other elements */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 2rem;
+  margin-right: 2rem;
+  padding-top: 0.5rem;
+}
+
+nav.active ul {
+  display: flex;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+nav a:hover {
+  color: #EFE9D5;
+}
+
+/* FOOTER */
+footer {
+  background-color:#497D74;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.7rem;
+  line-height: 1.2;
+}
+
+footer p {
+  padding: 0.75rem;
+  font-size: 0.9rem;
+}
+
+
+/* PROFILE SETUP */
+.profile-container {
+  margin: 10% auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  height: 100%;
+  justify-content: center;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+  object-fit: cover;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-name {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  margin: .5rem 0;
+  /* Ref: https://developer.mozilla.org/en-US/docs/Web/CSS/opacity */
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.profile-description {
+  text-align: center;
+  margin: .5% 0;
+  color: #EFE9D5;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  padding: 0 25px 0 25px;
+}
+
+.profile-container>.profile-description>span {
+  line-height: 2;
+}
+
+/* GRADE, STAFF, WEATHER SET-UP */
+
+.main-container {
+  max-width: 400px;
+  padding: 2rem;
+  background: white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  margin: 10% auto;
+  border-radius: 14px;
+}
+
+.staff {
+  margin: 3% auto;
+  max-width: max-content;
+}
+
+label {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  color: #494F55;
+  font-size: 0.9rem;
+}
+
+input {
+  width: 70%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 5px 2px;
+}
+
+button {
+  display: block;
+  background-color: #497D74;
+  padding: 0.1rem;
+  color: white;
+  border: none;
+  border-radius: 4rem;
+  font-size: 0.9rem;
+  margin-top: 3%;
+  width: 40%;
+  height: 25px;
+}
+
+button:hover {
+  background-color: #046778;
+  color: #ececec;
+}
+
+.input-mark,
+.input-temperature,
+.mark-convert,
+.temperature-convert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.validation-message,
+.celsius-convert,
+.kelvin-convert {
+  display: none;
+}
+
+.error,
+.danger,
+.critical,
+.success {
+  margin-top: 1rem;
+  display: block;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+}
+
+.danger,
+.critical,
+.success {
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.danger {
+  color: rgb(255, 2, 2);
+}
+
+.critical {
+  color: orange;
+}
+
+.success {
+  color: green;
+}
+
+/*  STAFF */
+.staff-main-container{
+  margin: 10%;
+}
+
+.staff-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  max-width: 90%;
+  background: white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  border-radius: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  table-layout: fixed;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+th:first-child,
+td:first-child {
+  width: 8%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 18%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 25%;
+}
+
+th:nth-child(6),
+td:nth-child(6) {
+  width: 15%;
+}
+
+.btn-disabled {
+  /* make it blur and remove hover effect */
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pagination button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #497D74;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  margin: 0 5px;
+  width: 100px;
+  height: 40px;
+}
+
+
+/*
+  When the screen width is 480px or smaller, this rule applies
+*/
+@media screen and (max-width: 475px) {
+
+  .profile-name {
+    font-size: 1.5rem;
+  }
+
+  .main-container {
+    margin-top: 30%;
+    width: 80%;
+  }
+
+  .staff-container {
+    background-color: transparent;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  }
+
+  label {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .staff-container {
+    max-width: 95%;
+    padding: 0.5rem;
+  }
+
+  table {
+    font-size: 0.4rem;
+    align-items: left;
+    background-color: white;
+  }
+
+  th,
+  td {
+    padding: 0.2rem;
+  }
+
+  .pagination-info>span {
+    color: white;
+    font-size: 0.8rem;
+  }
+
+  .pagination button {
+    height: 2%;
+  }
+}

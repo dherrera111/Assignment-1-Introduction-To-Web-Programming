@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff</title>
+    
+    <!-- Icon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/styles.css" class="rel">
+    
+    <!-- script -->
+    <script src="./components/header.js" type="text/javascript" defer></script>
+    <script src="./components/footer.js" type="text/javascript" defer></script>
+    <script src="./assets/js/staff.js" type="text/javascript" defer></script>
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <header-component></header-component>
+
+    <div class="staff-main-container">
+        <div class="staff-container">
+            <table id="staff-table">
+                <thead>
+                    <tr>
+                        <th>No. </th>
+                        <th onclick="sortStaff('name')">Name &#x2191;&#x2193; </th>
+                        <th>Position</th>
+                        <th>Location</th>
+                        <th>Postal Code</th>
+                        <th>Date Hired</th>
+                        <th onclick="sortStaff('salary')">Salary &#x2191;&#x2193;</th>
+                    </tr>
+                </thead>
+                <tbody id="staff-list"></tbody>
+            </table>
+            <div class="pagination-container">
+                <div class="pagination-info">
+                    <span id="page-info">Page 1 of 1</span>
+                </div>
+                <div class="pagination">
+                    <button id="prev-page" onclick="setCurrentPage(-1)">Previous</button>
+                    <button id="next-page" onclick="setCurrentPage(1)">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer-component></footer-component>
+</body>
+</html>
